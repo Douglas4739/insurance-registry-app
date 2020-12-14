@@ -1,10 +1,17 @@
 
 import './App.css';
-import template from './template'
+import { LoginPage, NewUserForm, ContentPage, itemCardCondensed, itemCardExpanded } from './template';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    template.loginPage()
+    <Router>
+      <div className='App'>
+        <LoginPage />
+        <Route path='/NewUserForm' component={NewUserForm} />
+        <Route path='/ContentPage' component={ContentPage} />
+      </div>
+    </Router>
   );
 }
 

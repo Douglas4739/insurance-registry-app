@@ -1,43 +1,58 @@
+import React from 'react';
 
 
-const loginPage = () => {
+function cancelHandeler() {
+    console.log('Button clicked')
+}
+function submitHandeler() {
+    console.log('Button clicked')
+}
+const LoginPage = () => {
+
     return  (
-        <section class='start-page'>
+        <section className='Login'>
             <h1>I.I.R.</h1>
-            <label for='userName'>User Name:</label>
+            <form onSubmit={submitHandeler}>
+            <label htmlFor='userName'>User Name:</label>
             <input type='text' id='userName' placeholder='Enter User Name...' required />
             <br />
-            <label for='password'>Password:</label>
+            <label htmlFor='password'>Password:</label>
             <input type='text' id='password' placeholder='Enter Password' required />
             <br />
             <button type='submit' id='submit'>Submit</button>
-            <button type='button' id='cancel'>Cancel</button>
+            <button type='button' id='cancel' onClick={cancelHandeler}>Cancel</button>
+            </form>
         </section>);
 };
 
-const newUserForm = () => {
+const NewUserForm = () => {
+
     return (
     <form id='newUserInfo'>
         <h1>I.I.R.</h1>
         <section class='newUserForm'>
-        <label for='email'>Email:</label>
+        <form onSubmit={submitHandeler}>
+        <label htmlFor='email'>Email:</label>
         <input type='text' id='email' placeholder='Enter Email' required />
-        <label for='userName'>User Name:</label>
+        <label htmlFor='userName'>User Name:</label>
         <input type='text' id='userName' placeholder='Enter User Name' required />
-        <label for='password'>Password:</label>
+        <label htmlFor='password'>Password:</label>
         <input type='text' id='password' placeholder='Enter Password' required />
-        <label for='passwordConfirm'>Confirm Password:</label>
+        <label htmlFor='passwordConfirm'>Confirm Password:</label>
         <input type='text' id='passwordConfirm' placeholder='Confirm Password' required />
+        <button type='submit' id='submit'>Submit</button>
+        <button type='button' id='cancel'>Cancel</button>
+        </form>
         </section>
     </form>);
 }
 
 
-const contentPage = () => {
+const ContentPage = () => {
     return (
         <section class='contentPage'>
             <button type='button' id='addItem'>Add Item</button>
-            <label for='minimumCost'>Filter by Cost:</label>
+            <label htmlFor='minimumCost'>Filter by Cost:</label>
             <select name='minimumCost' id='minimumCost'>
                 <option value='null'>Show All</option>
                 <option class='minimum' value='100'>$100</option>
@@ -76,7 +91,7 @@ const itemCardCondensed = () => {
 
 const itemCardExpanded = () => {
     return (
-    <section class='condensedCard'>
+    <section class='expandedCard'>
         <p>Item Name</p>
         <p>Item Cost</p>
         <p>Item Description</p>
@@ -88,4 +103,4 @@ const itemCardExpanded = () => {
     );
 }
 
-export default { loginPage, newUserForm, contentPage, itemCardCondensed, itemCardExpanded };
+export { LoginPage, NewUserForm, ContentPage, itemCardCondensed, itemCardExpanded };
