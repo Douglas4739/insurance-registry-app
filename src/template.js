@@ -4,9 +4,11 @@ import React from 'react';
 function cancelHandeler() {
     console.log('Button clicked')
 }
-function submitHandeler() {
-    console.log('Button clicked')
+function submitHandeler(evt) {
+    evt.preventDefault();
+    console.log('Button clicked');
 }
+
 const LoginPage = () => {
 
     return  (
